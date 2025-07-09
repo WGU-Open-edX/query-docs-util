@@ -9,9 +9,9 @@ import path from "path";
 // GitHub App credentials
 const appId = process.env.GITHUB_APP_ID;
 const userHomeDir = os.homedir();
-const filePath = path.join(userHomeDir, '.ssh/query-docs-util.2025-07-09.private-key.pem');
+const filePath = path.join(userHomeDir, process.env.PEM_PATH);
 const privateKey = fs.readFileSync(filePath, "utf8");
-const org = "WGU-Open-edX";
+const org = process.env.GITHUB_ORG_NAME;
 const startDate = "2025-07-01";
 const endDate = "2025-07-10";
 
@@ -21,7 +21,7 @@ async function main() {
     auth: {
       appId,
       privateKey,
-      installationId: 75088913, // Get this from GitHub App installation
+      installationId: process.env.INSTALLATION_ID, // Get this from GitHub App installation
     },
   });
 
