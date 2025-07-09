@@ -1,6 +1,6 @@
 # Query Docs Util GitHub App
 
-This is an app that should query your GitHub organization for lines of documentation added and deleted.
+This is an app that will query your GitHub organization for lines of documentation added and deleted. It filters based on `.md`, `.rst`, and `.adoc` files and `/docs` folders.
 
 ## Create environment file
 
